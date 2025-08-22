@@ -14,14 +14,14 @@ export const JobDescriptionInput: React.FC<JobDescriptionInputProps> = ({
   onJobDescriptionChange
 }) => {
   return (
-    <Card className="p-6">
+    <Card className="p-6 bg-white">
       <div className="flex items-center space-x-2 mb-4">
-        <Briefcase className="h-5 w-5 text-primary" />
-        <h2 className="text-xl font-semibold text-card-foreground">Job Description</h2>
+        <Briefcase className="h-5 w-5 text-black" />
+        <h2 className="text-xl font-semibold text-black">Job Description</h2>
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="job-description" className="text-sm font-medium">
+        <Label htmlFor="job-description" className="text-sm font-medium text-black">
           Paste the job description you want to match against
         </Label>
         <Textarea
@@ -29,9 +29,9 @@ export const JobDescriptionInput: React.FC<JobDescriptionInputProps> = ({
           placeholder="Paste the complete job description here including required skills, qualifications, and responsibilities..."
           value={jobDescription}
           onChange={(e) => onJobDescriptionChange(e.target.value)}
-          className="min-h-[200px] resize-none"
+          className="min-h-[200px] resize-none bg-white text-black border-white"
         />
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs text-black">
           The more detailed the job description, the better the analysis will be.
         </p>
       </div>
