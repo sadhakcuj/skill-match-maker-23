@@ -41,43 +41,43 @@ export const ResumeUpload: React.FC<ResumeUploadProps> = ({ onFileUploaded, uplo
   };
 
   return (
-    <Card className="p-6">
-      <h2 className="text-xl font-semibold mb-4 text-card-foreground">Upload Resume</h2>
+    <Card className="p-6 bg-white">
+      <h2 className="text-xl font-semibold mb-4 text-black">Upload Resume</h2>
       
       {uploadedFile ? (
-        <div className="flex items-center justify-between p-4 bg-accent rounded-lg">
+        <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-black">
           <div className="flex items-center space-x-3">
-            <FileText className="h-8 w-8 text-accent-foreground" />
+            <FileText className="h-8 w-8 text-black" />
             <div>
-              <p className="font-medium text-accent-foreground">{uploadedFile.name}</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="font-medium text-black">{uploadedFile.name}</p>
+              <p className="text-sm text-black">
                 {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB
               </p>
             </div>
           </div>
           <Button variant="ghost" size="sm" onClick={removeFile}>
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4 text-black" />
           </Button>
         </div>
       ) : (
         <div
           {...getRootProps()}
           className={cn(
-            "border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all duration-200",
+            "border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all duration-200 border-black",
             isDragActive || dragActive
-              ? "border-primary bg-primary/5 scale-105"
-              : "border-border hover:border-primary hover:bg-accent/50"
+              ? "bg-white scale-105"
+              : "hover:bg-white"
           )}
         >
           <input {...getInputProps()} />
-          <Upload className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-          <h3 className="text-lg font-medium mb-2 text-foreground">
+          <Upload className="mx-auto h-12 w-12 text-black mb-4" />
+          <h3 className="text-lg font-medium mb-2 text-black">
             {isDragActive ? 'Drop your resume here' : 'Upload your resume'}
           </h3>
-          <p className="text-muted-foreground mb-4">
+          <p className="text-black mb-4">
             Drag and drop your resume, or click to browse
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-black">
             Supports PDF, DOC, and DOCX files
           </p>
         </div>
