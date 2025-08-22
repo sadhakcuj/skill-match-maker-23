@@ -53,37 +53,37 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-secondary">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <Target className="h-8 w-8 text-primary" />
-            <h1 className="text-4xl font-bold bg-gradient-accent bg-clip-text text-transparent">
+            <Target className="h-8 w-8 text-black" />
+            <h1 className="text-4xl font-bold bg-clip-text text-black">
               Resume Analyzer
             </h1>
           </div>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-black max-w-2xl mx-auto">
             Upload your resume and paste a job description to get personalized insights and improve your chances of landing the job.
           </p>
         </div>
 
         {/* Features */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <Card className="p-6 text-center">
-            <Zap className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Instant Analysis</h3>
-            <p className="text-muted-foreground">Get immediate feedback on how well your resume matches the job requirements.</p>
+          <Card className="p-6 text-center bg-white border border-black">
+            <Zap className="h-12 w-12 text-black mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2 text-black">Instant Analysis</h3>
+            <p className="text-black">Get immediate feedback on how well your resume matches the job requirements.</p>
           </Card>
-          <Card className="p-6 text-center">
-            <Target className="h-12 w-12 text-accent-foreground mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Skills Matching</h3>
-            <p className="text-muted-foreground">See exactly which skills you have and which ones you need to develop.</p>
+          <Card className="p-6 text-center bg-white border border-black">
+            <Target className="h-12 w-12 text-black mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2 text-black">Skills Matching</h3>
+            <p className="text-black">See exactly which skills you have and which ones you need to develop.</p>
           </Card>
-          <Card className="p-6 text-center">
-            <BarChart3 className="h-12 w-12 text-success mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Personalized Tips</h3>
-            <p className="text-muted-foreground">Receive actionable recommendations to improve your resume.</p>
+          <Card className="p-6 text-center bg-white border border-black">
+            <BarChart3 className="h-12 w-12 text-black mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2 text-black">Personalized Tips</h3>
+            <p className="text-black">Receive actionable recommendations to improve your resume.</p>
           </Card>
         </div>
 
@@ -102,17 +102,17 @@ const Index = () => {
 
           <div>
             {!analysisResults && (
-              <Card className="p-8 text-center">
-                <Target className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2 text-card-foreground">Ready to Analyze</h3>
-                <p className="text-muted-foreground mb-6">
+              <Card className="p-8 text-center bg-white border border-black">
+                <Target className="h-16 w-16 text-black mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2 text-black">Ready to Analyze</h3>
+                <p className="text-black mb-6">
                   Upload your resume and add a job description to get started with the analysis.
                 </p>
                 <Button 
                   onClick={analyzeResume} 
                   disabled={!uploadedFile || !jobDescription.trim() || isAnalyzing}
                   size="lg"
-                  className="bg-gradient-primary hover:opacity-90"
+                  className="bg-white hover:opacity-90 text-black border border-black"
                 >
                   {isAnalyzing ? 'Analyzing...' : 'Analyze Resume'}
                 </Button>
@@ -127,12 +127,12 @@ const Index = () => {
 
         {/* Backend Integration Note */}
         {(uploadedFile || jobDescription) && !analysisResults && (
-          <Card className="p-6 bg-accent/50 border-accent">
+          <Card className="p-6 bg-white border  ">
             <div className="flex items-start space-x-3">
-              <div className="w-2 h-2 bg-accent-foreground rounded-full mt-2" />
+              <div className="w-2 h-2 bg-black rounded-full mt-2" />
               <div>
-                <h4 className="font-medium text-accent-foreground mb-1">Backend Integration Required</h4>
-                <p className="text-sm text-muted-foreground">
+                <h4 className="font-medium text-black mb-1">Backend Integration Required</h4>
+                <p className="text-sm text-black">
                   To enable resume parsing and real skills analysis, connect this app to Supabase for backend functionality.
                 </p>
               </div>
